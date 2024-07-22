@@ -22,7 +22,6 @@ export const UserItem = ({
     isLive
 }: UserItemProps) => {
     const pathname = usePathname()
-    console.log('🚀 ~ pathname:', pathname)
 
     const { collapsed } = useSidebar((state) => state)
 
