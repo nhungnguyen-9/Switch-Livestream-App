@@ -11,7 +11,6 @@ export const getSelf = async () => {
     const user = await db.user.findUnique({
         where: { externalUserId: self.id }
     })
-    console.log('🚀 ~ getSelf ~ user:', user)
 
     if (!user) {
         throw new Error('Not found')

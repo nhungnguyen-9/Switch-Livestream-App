@@ -6,7 +6,6 @@ export const getRecommended = async () => {
 
     try {
         const self = await getSelf()
-        console.log('🚀 ~ getRecommended ~ self:', self)
         userId = self.id
     } catch {
         userId = null
