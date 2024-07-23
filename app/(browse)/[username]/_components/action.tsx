@@ -45,6 +45,7 @@ export const Action = ({
             disabled={isPending}
             onClick={onClick}
             variant='primary'
+            className="w-full"
         >
             {isFollowing ? 'Unfollow' : 'Follow'}
         </Button>
