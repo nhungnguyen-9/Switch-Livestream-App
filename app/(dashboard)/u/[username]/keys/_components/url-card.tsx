@@ -1,5 +1,6 @@
 import { Input } from '@/components/ui/input'
 import React from 'react'
+import { CopyButton } from './copy-button'
 
 interface UrlCardProps {
     value: string | null
@@ -20,6 +21,9 @@ export const UrlCard = ({
                             value={value || ''}
                             disabled
                             placeholder='Server URL'
+                        />
+                        <CopyButton
+                            value={value || ''}
                         />
                     </div>
                 </div>
