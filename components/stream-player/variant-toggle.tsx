@@ -19,7 +19,7 @@ export const VariantToggle = () => {
         onChangeVariant(newVariant)
     }
 
-    const label = variant ? 'Community' : 'Go back to chat'
+    const label = isChat ? 'Community' : 'Go back to chat'
 
     return (
         <Hint label={label} side="left" asChild>
