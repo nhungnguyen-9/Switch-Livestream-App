@@ -43,7 +43,7 @@ export const ChatForm = ({
             setTimeout(() => {
                 setIsDelayBlocked(true)
                 onSubmit()
-            }, 3000)
+            }, 2000)
         } else {
             onSubmit()
         }
