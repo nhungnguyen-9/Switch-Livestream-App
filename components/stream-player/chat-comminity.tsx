@@ -19,8 +19,8 @@ export const ChatCommunity = ({
     hostName,
     isHidden
 }: ChatCommunityProps) => {
-    const [value, setValue] = useState('')
-    const debounceValue = useDebounceValue<string>(setValue, 500)
+    const [value] = useState('')
+    const [debounceValue, setValue] = useDebounceValue<string>(value, 500)
 
     const participants = useParticipants()
 
@@ -40,7 +40,7 @@ export const ChatCommunity = ({
 
         // Filter participants based on the debounced input value
         return deduped.filter((participant) => {
-            return participant.name?.toLowerCase().includes(debounceValue.toString());
+            return participant.name?.toLowerCase().includes(debounceValue.toLowerCase());
         });
     }, [participants, debounceValue]);
 
