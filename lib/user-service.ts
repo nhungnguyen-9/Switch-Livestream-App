@@ -6,7 +6,12 @@ export const getUserByName = async (username: string) => {
             username
         },
         include: {
-            stream: true
+            stream: true,
+            _count: {
+                select: {
+                    followedBy: true
+                }
+            }
         }
     })
 
