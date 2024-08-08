@@ -3,6 +3,7 @@ import { getUserByName } from "@/lib/user-service";
 import { notFound } from "next/navigation";
 import { Action } from "./_components/action";
 import { isBlockedByUser } from "@/lib/block-service";
+import { StreamLayer } from "@/components/stream-player";
 
 interface UserPageProps {
     params: {
@@ -15,7 +16,7 @@ const UserPage = async ({
 }: UserPageProps) => {
     const user = await getUserByName(params.username)
 
-    if (!user) {
+    if (!user || !user.stream) {
         notFound()
     }
 
@@ -27,11 +28,11 @@ const UserPage = async ({
     }
 
     return (
-        <div>
-            user: {params.username}
-            <p>is Following: {`${isFollowing}`}</p>
-            <Action userId={user.id} isFollowing={isFollowing} />
-        </div>
+        <StreamLayer
+            user={user}
+            stream={user.stream}
+            isFollowing={isFollowing}
+        />
     );
 }
 

@@ -71,7 +71,7 @@ export const ChatForm = ({
                     disabled={isDisabled}
                     className={cn(
                         'border-white/10',
-                        isFollowersOnly && 'rounded-t-none border-t-0'
+                        (isFollowersOnly || isDelayed) && 'rounded-t-none border-t-0'
                     )}
                 />
             </div>
