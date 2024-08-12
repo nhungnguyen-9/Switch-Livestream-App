@@ -13,9 +13,28 @@ import { Header, HeaderSkeleton } from "./header"
 import { InfoCard } from "./info-card"
 import { AboutCard } from "./about-card"
 
+type CustomStream = {
+    id: string,
+    isChatEnabled: boolean,
+    isChatDelayed: boolean,
+    isChatFollowersOnly: boolean,
+    isLive: boolean,
+    thumbnailUrl: string | null,
+    name: string
+}
+
+type CustomUser = {
+    id: string,
+    username: string,
+    bio: string | null,
+    stream: CustomStream | null,
+    imageUrl: string,
+    _count: { followedBy: number }
+}
+
 interface StreamLayerProps {
-    user: User & { stream: Stream | null, _count: { followedBy: number } },
-    stream: Stream,
+    user: CustomUser & { stream: CustomStream | null, _count: { followedBy: number } },
+    stream: CustomStream,
     isFollowing: boolean
 }
 
