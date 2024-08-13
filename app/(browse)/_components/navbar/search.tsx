@@ -21,6 +21,7 @@ export const Search = () => {
         }, { skipEmptyString: true })
 
         router.push(url)
+        setValue('')
     }
 
     const onClear = () => {
