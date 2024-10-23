@@ -13,7 +13,6 @@ const CommunityPage = async () => {
         username: block.blocked.username,
         createdAt: format(new Date(block.blocked.createdAt), 'dd/MM/yyy')
     }))
-    console.log('🚀 ~ formattedData ~ formattedData:', formattedData)
 
     return (
         <div className="p-6">
